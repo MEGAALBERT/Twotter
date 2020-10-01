@@ -11,7 +11,7 @@
     </div>
 </template>
 
-<script>
+<script scoped>
 export default {
     name:"TwootItem",
     props: { // props must have this information always

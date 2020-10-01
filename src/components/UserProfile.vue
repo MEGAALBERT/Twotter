@@ -36,7 +36,7 @@
     </div>
 </template>
 
-<script>
+<script scoped>
 import TwootItem from "./TwootItem"
 
 export default {
