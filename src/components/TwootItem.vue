@@ -1,5 +1,5 @@
 <template>
-    <div class='twoot-item'>
+    <div class='twoot-item' @click='favouriteTwoot(twoot.id)'>
         <div class='user-profile__twoot'>
             <div class="twoot-item__user">
                 @{{username}}
@@ -14,7 +14,7 @@
 <script>
 export default {
     name:"TwootItem",
-    props: {
+    props: { // props must have this information always
         username: {
             type: String,
             required: true,
@@ -22,6 +22,11 @@ export default {
         twoot: {
             type: Object,
             require: true,
+        }
+    },
+    methods: {
+        favouriteTwoot(id){ // with emit we are calling a prop from father to child and running a function
+            this.$emit('favourite', id)
         }
     }
 }
