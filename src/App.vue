@@ -1,21 +1,33 @@
 <template> 
+<div id='app'>
 <nav>
   <div class='navigation__logo'>
     Twotter
   </div>
-  </nav>
   <div class='navigation__user'>
-    <UserProfile/>
+    {{state.user.username}}
+  </div>
+  </nav>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import UserProfile from "./components/UserProfile"
+
+import {reactive} from "vue";
 
 export default {
   name: 'App',
-  components: {
-    UserProfile,
+  setup(){
+    const state = reactive({
+      user: {
+        username: "AlbertoMedellin"
+      }
+    })
+
+    return {
+      state
+    }
   }
 }
 </script>
@@ -27,7 +39,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   min-height: 100vh;
-  background-color: #F3F5FA;
+  background-color: #b3ffff;
   nav {
     display: flex;
     align-items: center;
